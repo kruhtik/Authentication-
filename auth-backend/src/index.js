@@ -38,32 +38,4 @@ app.listen(8080, () => {
 
 
 
-// // SIGNUP
-// app.post('/signup', async (req, res) => {
-//   const { name, email, password } = req.body;
-//   console.log(req.body);
-//   if (!name || !email || !password) return res.status(400).json({ error: 'All fields required' });
-
-//   // Check if user exists
-//   if (users.some(u => u.email === email)) return res.status(409).json({ error: 'Email already registered' });
-
-//   // Hash password
-//   const hashedPassword = await bcrypt.hash(password, 10);
-
-//   // Save user
-//   users.push({ name, email, password: hashedPassword });
-//   res.json({ message: 'Registered successfully' });
-// });
-
-// // LOGIN
-// app.post('/login', async (req, res) => {
-//   const { email, password } = req.body;
-//   console.log(req.body);
-//   const user = users.find(u => u.email === email);
-//   if (!user) return res.status(401).json({ error: 'Invalid credentials' });
  
-//   const match = await bcrypt.compare(password, user.password);
-//   if (!match) return res.status(401).json({ error: 'Invalid credentials' });
-
-//   res.json({ message: 'Login successful', name: user.name, email: user.email });
-// });
